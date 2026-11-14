@@ -9,200 +9,229 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>html { scroll-behavior: smooth; scroll-padding-top: 80px; }</style>
 </head>
-<body class="min-h-screen bg-slate-950 text-white">
+<body class="min-h-screen bg-slate-950 text-white flex flex-col">
+
 
   <nav class="sticky top-0 z-50 bg-black border-b border-slate-800 px-8 py-3 flex flex-wrap justify-between items-center gap-3">
-    <a href="#top" aria-label="CyberFix360 home"><img src="logo.png" alt="CyberFix360" class="h-14 w-auto"></a>
+    <a href="#top" onclick="showPage('home')" aria-label="CyberFix360 home"><img src="logo.png" alt="CyberFix360" class="h-14 w-auto"></a>
     <div class="flex flex-wrap gap-6 text-sm items-center">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#process">How it works</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" onclick="showPage('home')" class="hover:text-cyan-400 transition">About</a>
+      <a href="#services" id="nav-services" onclick="showPage('services', event)" class="hover:text-cyan-400 transition">Services</a>
+      <a href="#process" onclick="showPage('home')" class="hover:text-cyan-400 transition">How it works</a>
+      <a href="#contact" onclick="showPage('home')" class="hover:text-cyan-400 transition">Contact</a>
     </div>
   </nav>
 
-  <section id="top" class="px-10 py-24 bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-5xl font-bold mb-6">Cyber security, compliance &amp; assurance</h1>
-        <p class="text-slate-300 mb-6">
-          CyberFix360 helps organisations achieve Cyber Essentials, prepare for ISO 27001,
-          review their security architecture and find and fix vulnerabilities.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#contact" class="bg-cyan-500 text-black px-5 py-3 rounded-2xl font-semibold">Book a consultation</a>
-          <a href="#services" class="border border-cyan-500 px-5 py-3 rounded-2xl">See our services</a>
+
+  <div id="home-view" class="flex-grow">
+    <section id="top" class="px-10 py-24 bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-5xl font-bold mb-6">Cyber security, compliance &amp; assurance</h1>
+          <p class="text-slate-300 mb-6">
+            CyberFix360 helps organisations achieve Cyber Essentials, prepare for ISO 27001,
+            review their security architecture and find and fix vulnerabilities.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#contact" class="bg-cyan-500 text-black px-5 py-3 rounded-2xl font-semibold hover:bg-cyan-400 transition">Book a consultation</a>
+            <a href="#services" onclick="showPage('services', event)" class="border border-cyan-500 px-5 py-3 rounded-2xl hover:bg-cyan-500/10 transition">See our services</a>
+          </div>
+        </div>
+        <div class="bg-slate-900 rounded-3xl p-8 shadow-2xl border border-slate-800">
+          <h2 class="text-2xl font-bold mb-4">What we help with</h2>
+          <ul class="space-y-2 text-slate-300">
+            <li>✓ Security architecture</li>
+            <li>✓ ISO 27001 consultancy</li>
+            <li>✓ Vulnerability assessments</li>
+            <li>✓ Compliance &amp; governance</li>
+            <li>✓ Cyber Essentials support</li>
+          </ul>
         </div>
       </div>
-      <div class="bg-slate-900 rounded-3xl p-8 shadow-2xl border border-slate-800">
-        <h2 class="text-2xl font-bold mb-4">What we help with</h2>
-        <ul class="space-y-2 text-slate-300">
-          <li>✓ Security architecture</li>
-          <li>✓ ISO 27001 consultancy</li>
-          <li>✓ Vulnerability assessments</li>
-          <li>✓ Compliance &amp; governance</li>
-          <li>✓ Cyber Essentials support</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about" class="max-w-6xl mx-auto px-10 py-20">
-    <h2 class="text-3xl font-bold mb-6">About CyberFix360</h2>
-    <p class="text-slate-300 leading-7 max-w-3xl">
-      CyberFix360 is a consultancy-focused cyber security provider. We help small and
-      medium-sized businesses, professional services firms, software companies and
-      public-sector organisations improve their resilience, meet compliance requirements
-      and put security best practice in place.
-    </p>
-  </section>
-
-  <section id="services" class="max-w-6xl mx-auto px-10 py-20">
-    <div class="mb-12">
-      <h2 class="text-3xl font-bold mb-4">Services</h2>
+    <section id="about" class="max-w-6xl mx-auto px-10 py-20">
+      <h2 class="text-3xl font-bold mb-6">About CyberFix360</h2>
       <p class="text-slate-300 leading-7 max-w-3xl">
-        Comprehensive cybersecurity solutions tailored to protect your organization against evolving digital threats, ensure regulatory compliance, and build resilient infrastructure.
+        CyberFix360 is a consultancy-focused cyber security provider. We help small and
+        medium-sized businesses, professional services firms, software companies and
+        public-sector organisations improve their resilience, meet compliance requirements
+        and put security best practice in place.
       </p>
+    </section>
+
+    <section id="process" class="max-w-6xl mx-auto px-10 py-20">
+      <h2 class="text-3xl font-bold mb-8">How it works</h2>
+      <ol class="grid md:grid-cols-3 gap-5">
+        <li class="bg-slate-900 rounded-2xl p-6 border border-slate-800">
+          <h3 class="font-semibold mb-2">1. Talk to us</h3>
+          <p class="text-slate-300 text-sm">Tell us about your organisation and what you need to achieve.</p>
+        </li>
+        <li class="bg-slate-900 rounded-2xl p-6 border border-slate-800">
+          <h3 class="font-semibold mb-2">2. Assess</h3>
+          <p class="text-slate-300 text-sm">We review your current position and report the gaps and risks.</p>
+        </li>
+        <li class="bg-slate-900 rounded-2xl p-6 border border-slate-800">
+          <h3 class="font-semibold mb-2">3. Fix and certify</h3>
+          <p class="text-slate-300 text-sm">We give you clear remediation steps and support you through certification.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="contact" class="max-w-4xl mx-auto px-10 py-20">
+      <h2 class="text-3xl font-bold mb-4">Contact us</h2>
+      <p class="text-slate-300 mb-8">
+        Email <a class="text-cyan-400 underline" href="mailto:hello@cyberfix360.com">hello@cyberfix360.com</a>
+        or send us a message below.
+      </p>
+      <div class="bg-slate-900 rounded-3xl p-8 border border-slate-800">
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="grid gap-4">
+          <input name="name" required class="bg-slate-800 p-3 rounded-xl" placeholder="Name" aria-label="Name">
+          <input name="email" type="email" required class="bg-slate-800 p-3 rounded-xl" placeholder="Email" aria-label="Email">
+          <input name="company" class="bg-slate-800 p-3 rounded-xl" placeholder="Company" aria-label="Company">
+          <textarea name="message" required class="bg-slate-800 p-3 rounded-xl" rows="5" placeholder="How can we help?" aria-label="Message"></textarea>
+          <button type="submit" class="bg-cyan-500 text-black px-5 py-3 rounded-2xl font-semibold">Send enquiry</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <div id="services-view" class="hidden flex-grow">
+    <!-- Services Header Banner -->
+    <div class="px-10 py-16 bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 border-b border-slate-800">
+      <div class="max-w-6xl mx-auto">
+        <button onclick="showPage('home')" class="text-cyan-400 text-sm hover:underline inline-flex items-center gap-1 mb-4">
+          ← Back to home
+        </button>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
+        <p class="text-slate-300 leading-7 max-w-3xl">
+          Comprehensive cybersecurity solutions tailored to protect your organization against evolving digital threats, ensure regulatory compliance, and build resilient infrastructure.
+        </p>
+      </div>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <section class="max-w-6xl mx-auto px-10 py-20">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+
+        <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between min-h-[340px] transition hover:border-cyan-500">
+          <div>
+            <h3 class="font-semibold text-lg mb-2 text-white">Vulnerability assessments</h3>
+            <p class="text-slate-300 text-sm mb-4">Systematic identification and cataloging of security flaws across your networks, applications, and endpoints before malicious actors can exploit them.</p>
+          </div>
+          <ul class="text-slate-400 text-xs space-y-1.5 border-t border-slate-800 pt-4 mt-auto">
+            <li>• Automated &amp; manual scanning</li>
+            <li>• Risk scoring &amp; prioritization</li>
+            <li>• Actionable remediation steps</li>
+          </ul>
+        </div>
+
+
+        <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between min-h-[340px] transition hover:border-cyan-500">
+          <div>
+            <h3 class="font-semibold text-lg mb-2 text-white">Cyber Essentials certification support</h3>
+            <p class="text-slate-300 text-sm mb-4">End-to-end guidance through the UK government-backed scheme to protect your organization against common cyber attacks.</p>
+          </div>
+          <ul class="text-slate-400 text-xs space-y-1.5 border-t border-slate-800 pt-4 mt-auto">
+            <li>• Readiness self-assessment review</li>
+            <li>• Technical control implementation</li>
+            <li>• Certification audit preparation</li>
+          </ul>
+        </div>
+
+
+        <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between min-h-[340px] transition hover:border-cyan-500">
+          <div>
+            <h3 class="font-semibold text-lg mb-2 text-white">Cyber Essentials Plus preparation</h3>
+            <p class="text-slate-300 text-sm mb-4">Rigorous hands-on technical verification and testing support to achieve the highest level of Cyber Essentials certification.</p>
+          </div>
+          <ul class="text-slate-400 text-xs space-y-1.5 border-t border-slate-800 pt-4 mt-auto">
+            <li>• External vulnerability testing</li>
+            <li>• Authenticated workstation audits</li>
+            <li>• Simulated phishing &amp; malware defense</li>
+          </ul>
+        </div>
+
+
+        <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between min-h-[340px] transition hover:border-cyan-500">
+          <div>
+            <h3 class="font-semibold text-lg mb-2 text-white">ISO 27001 compliance consultancy</h3>
+            <p class="text-slate-300 text-sm mb-4">Build, implement, and maintain a robust Information Security Management System (ISMS) aligned with international standards.</p>
+          </div>
+          <ul class="text-slate-400 text-xs space-y-1.5 border-t border-slate-800 pt-4 mt-auto">
+            <li>• Gap analysis &amp; risk assessment</li>
+            <li>• Policy &amp; procedure drafting</li>
+            <li>• Internal audit support</li>
+          </ul>
+        </div>
+
+     
+        <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between min-h-[340px] transition hover:border-cyan-500">
+          <div>
+            <h3 class="font-semibold text-lg mb-2 text-white">Security architecture reviews</h3>
+            <p class="text-slate-300 text-sm mb-4">In-depth evaluations of your system design and network topology to embed security best practices from the ground up.</p>
+          </div>
+          <ul class="text-slate-400 text-xs space-y-1.5 border-t border-slate-800 pt-4 mt-auto">
+            <li>• Zero-trust framework alignment</li>
+            <li>• Network segmentation analysis</li>
+            <li>• Threat modeling &amp; mitigation</li>
+          </ul>
+        </div>
+
+
+        <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between min-h-[340px] transition hover:border-cyan-500">
+          <div>
+            <h3 class="font-semibold text-lg mb-2 text-white">Penetration testing coordination</h3>
+            <p class="text-slate-300 text-sm mb-4">Expert management of authorized simulated attacks to test your defenses against real-world threat actors.</p>
+          </div>
+          <ul class="text-slate-400 text-xs space-y-1.5 border-t border-slate-800 pt-4 mt-auto">
+            <li>• Scope definition &amp; vendor liaison</li>
+            <li>• Web app &amp; network penetration testing</li>
+            <li>• Post-test remediation tracking</li>
+          </ul>
+        </div>
+
+
+        <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between min-h-[340px] transition hover:border-cyan-500">
+          <div>
+            <h3 class="font-semibold text-lg mb-2 text-white">Virtual CISO services</h3>
+            <p class="text-slate-300 text-sm mb-4">Strategic executive-level cybersecurity leadership and governance without the overhead of a full-time hire.</p>
+          </div>
+          <ul class="text-slate-400 text-xs space-y-1.5 border-t border-slate-800 pt-4 mt-auto">
+            <li>• Security roadmap &amp; budgeting</li>
+            <li>• Board-level risk reporting</li>
+            <li>• Incident response oversight</li>
+          </ul>
+        </div>
+
+
+        <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between min-h-[340px] transition hover:border-cyan-500">
+          <div>
+            <h3 class="font-semibold text-lg mb-2 text-white">Cloud security assessments</h3>
+            <p class="text-slate-300 text-sm mb-4">Comprehensive audits of your cloud environments (AWS, Azure, GCP) to secure configurations, identities, and data.</p>
+          </div>
+          <ul class="text-slate-400 text-xs space-y-1.5 border-t border-slate-800 pt-4 mt-auto">
+            <li>• Misconfiguration detection</li>
+            <li>• Identity &amp; Access Management (IAM) review</li>
+            <li>• Cloud workload protection audit</li>
+          </ul>
+        </div>
+
+      </div>
+
  
-      <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between transition hover:border-cyan-500">
+      <div class="mt-16 bg-slate-900 rounded-3xl p-8 border border-slate-800 flex flex-wrap items-center justify-between gap-6">
         <div>
-          <h3 class="font-semibold text-lg mb-2 text-white">Vulnerability assessments</h3>
-          <p class="text-slate-300 text-sm mb-4">Systematic identification and cataloging of security flaws across your networks, applications, and endpoints before malicious actors can exploit them.</p>
+          <h2 class="text-2xl font-bold mb-2">Not sure which service fits your needs?</h2>
+          <p class="text-slate-300 text-sm">Book an initial consultation and we will help you scope the right security roadmap.</p>
         </div>
-        <ul class="text-slate-400 text-xs space-y-1 border-t border-slate-800 pt-4">
-          <li>• Automated & manual scanning</li>
-          <li>• Risk scoring & prioritization</li>
-          <li>• Actionable remediation steps</li>
-        </ul>
+        <a href="#contact" onclick="showPage('home')" class="bg-cyan-500 text-black px-6 py-3 rounded-2xl font-semibold hover:bg-cyan-400 transition">Book a consultation</a>
       </div>
+    </section>
+  </div>
 
-      <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between transition hover:border-cyan-500">
-        <div>
-          <h3 class="font-semibold text-lg mb-2 text-white">Cyber Essentials certification support</h3>
-          <p class="text-slate-300 text-sm mb-4">End-to-end guidance through the UK government-backed scheme to protect your organization against common cyber attacks.</p>
-        </div>
-        <ul class="text-slate-400 text-xs space-y-1 border-t border-slate-800 pt-4">
-          <li>• Readiness self-assessment review</li>
-          <li>• Technical control implementation</li>
-          <li>• Certification audit preparation</li>
-        </ul>
-      </div>
-
-
-      <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between transition hover:border-cyan-500">
-        <div>
-          <h3 class="font-semibold text-lg mb-2 text-white">Cyber Essentials Plus preparation</h3>
-          <p class="text-slate-300 text-sm mb-4">Rigorous hands-on technical verification and testing support to achieve the highest level of Cyber Essentials certification.</p>
-        </div>
-        <ul class="text-slate-400 text-xs space-y-1 border-t border-slate-800 pt-4">
-          <li>• External vulnerability testing</li>
-          <li>• Authenticated workstation audits</li>
-          <li>• Simulated phishing & malware defense</li>
-        </ul>
-      </div>
-      
-      <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between transition hover:border-cyan-500">
-        <div>
-          <h3 class="font-semibold text-lg mb-2 text-white">ISO 27001 compliance consultancy</h3>
-          <p class="text-slate-300 text-sm mb-4">Build, implement, and maintain a robust Information Security Management System (ISMS) aligned with international standards.</p>
-        </div>
-        <ul class="text-slate-400 text-xs space-y-1 border-t border-slate-800 pt-4">
-          <li>• Gap analysis & risk assessment</li>
-          <li>• Policy & procedure drafting</li>
-          <li>• Internal audit support</li>
-        </ul>
-      </div>
-
-      <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between transition hover:border-cyan-500">
-        <div>
-          <h3 class="font-semibold text-lg mb-2 text-white">Security architecture reviews</h3>
-          <p class="text-slate-300 text-sm mb-4">In-depth evaluations of your system design and network topology to embed security best practices from the ground up.</p>
-        </div>
-        <ul class="text-slate-400 text-xs space-y-1 border-t border-slate-800 pt-4">
-          <li>• Zero-trust framework alignment</li>
-          <li>• Network segmentation analysis</li>
-          <li>• Threat modeling & mitigation</li>
-        </ul>
-      </div>
-
-      <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between transition hover:border-cyan-500">
-        <div>
-          <h3 class="font-semibold text-lg mb-2 text-white">Penetration testing coordination</h3>
-          <p class="text-slate-300 text-sm mb-4">Expert management of authorized simulated attacks to test your defenses against real-world threat actors.</p>
-        </div>
-        <ul class="text-slate-400 text-xs space-y-1 border-t border-slate-800 pt-4">
-          <li>• Scope definition & vendor liaison</li>
-          <li>• Web app & network penetration testing</li>
-          <li>• Post-test remediation tracking</li>
-        </ul>
-      </div>
-
-      <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between transition hover:border-cyan-500">
-        <div>
-          <h3 class="font-semibold text-lg mb-2 text-white">Virtual CISO services</h3>
-          <p class="text-slate-300 text-sm mb-4">Strategic executive-level cybersecurity leadership and governance without the overhead of a full-time hire.</p>
-        </div>
-        <ul class="text-slate-400 text-xs space-y-1 border-t border-slate-800 pt-4">
-          <li>• Security roadmap & budgeting</li>
-          <li>• Board-level risk reporting</li>
-          <li>• Incident response oversight</li>
-        </ul>
-      </div>
-
-
-      <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between transition hover:border-cyan-500">
-        <div>
-          <h3 class="font-semibold text-lg mb-2 text-white">Cloud security assessments</h3>
-          <p class="text-slate-300 text-sm mb-4">Comprehensive audits of your cloud environments (AWS, Azure, GCP) to secure configurations, identities, and data.</p>
-        </div>
-        <ul class="text-slate-400 text-xs space-y-1 border-t border-slate-800 pt-4">
-          <li>• Misconfiguration detection</li>
-          <li>• Identity & Access Management (IAM) review</li>
-          <li>• Cloud workload protection audit</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="process" class="max-w-6xl mx-auto px-10 py-20">
-    <h2 class="text-3xl font-bold mb-8">How it works</h2>
-    <ol class="grid md:grid-cols-3 gap-5">
-      <li class="bg-slate-900 rounded-2xl p-6 border border-slate-800">
-        <h3 class="font-semibold mb-2">1. Talk to us</h3>
-        <p class="text-slate-300 text-sm">Tell us about your organisation and what you need to achieve.</p>
-      </li>
-      <li class="bg-slate-900 rounded-2xl p-6 border border-slate-800">
-        <h3 class="font-semibold mb-2">2. Assess</h3>
-        <p class="text-slate-300 text-sm">We review your current position and report the gaps and risks.</p>
-      </li>
-      <li class="bg-slate-900 rounded-2xl p-6 border border-slate-800">
-        <h3 class="font-semibold mb-2">3. Fix and certify</h3>
-        <p class="text-slate-300 text-sm">We give you clear remediation steps and support you through certification.</p>
-      </li>
-    </ol>
-  </section>
-
-  <section id="contact" class="max-w-4xl mx-auto px-10 py-20">
-    <h2 class="text-3xl font-bold mb-4">Contact us</h2>
-    <p class="text-slate-300 mb-8">
-      Email <a class="text-cyan-400 underline" href="mailto:hello@cyberfix360.com">hello@cyberfix360.com</a>
-      or send us a message below.
-    </p>
-    <div class="bg-slate-900 rounded-3xl p-8 border border-slate-800">
-    
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="grid gap-4">
-        <input name="name" required class="bg-slate-800 p-3 rounded-xl" placeholder="Name" aria-label="Name">
-        <input name="email" type="email" required class="bg-slate-800 p-3 rounded-xl" placeholder="Email" aria-label="Email">
-        <input name="company" class="bg-slate-800 p-3 rounded-xl" placeholder="Company" aria-label="Company">
-        <textarea name="message" required class="bg-slate-800 p-3 rounded-xl" rows="5" placeholder="How can we help?" aria-label="Message"></textarea>
-        <button type="submit" class="bg-cyan-500 text-black px-5 py-3 rounded-2xl font-semibold">Send enquiry</button>
-      </form>
-    </div>
-  </section>
 
   <footer class="border-t border-slate-800 bg-slate-900 px-10 py-8 text-sm text-slate-400">
     <div class="max-w-6xl mx-auto flex flex-wrap justify-between gap-4">
@@ -210,6 +239,36 @@
       <p>Registered company details and privacy policy to be added.</p>
     </div>
   </footer>
+
+
+  <script>
+    function showPage(page, event) {
+      if (event) event.preventDefault();
+      const homeView = document.getElementById('home-view');
+      const servicesView = document.getElementById('services-view');
+      const navServices = document.getElementById('nav-services');
+
+      if (page === 'services') {
+        homeView.classList.add('hidden');
+        servicesView.classList.remove('hidden');
+        navServices.classList.add('text-cyan-400', 'font-semibold');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        history.replaceState(null, '', '#services');
+      } else {
+        servicesView.classList.add('hidden');
+        homeView.classList.remove('hidden');
+        navServices.classList.remove('text-cyan-400', 'font-semibold');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        history.replaceState(null, '', window.location.pathname);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.location.hash === '#services') {
+        showPage('services');
+      }
+    });
+  </script>
 
 </body>
 </html>
