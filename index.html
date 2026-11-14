@@ -1,12 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CyberFix360</title>
-</head>
-<body>
-  <h1>CyberFix360</h1>
-  <p>Site coming soon.</p>
-</body>
-</html>
+export default function ShieldPointCyber() {
+  const partners = [
+    'Microsoft', 'CrowdStrike', 'Palo Alto Networks', 'Fortinet', 'Cisco', 'Check Point', 'Tenable', 'Qualys', 'Rapid7', 'Proofpoint', 'KnowBe4', 'AWS'
+  ];
+ 
+  const services = [
+    'Vulnerability Assessments',
+    'Cyber Essentials Certification Support',
+    'Cyber Essentials Plus Preparation',
+    'ISO 27001 Compliance Consultancy',
+    'Security Architecture Reviews',
+    'Penetration Testing Coordination',
+    'Virtual CISO Services',
+    'Cloud Security Assessments'
+  ];
+ 
+  const products = [
+    'Microsoft Defender Suite',
+    'CrowdStrike Falcon',
+    'Tenable Nessus',
+    'Qualys VMDR',
+    'Rapid7 Insight Platform',
+    'Proofpoint Email Security',
+    'KnowBe4 Security Awareness',
+    'Fortinet Security Fabric'
+  ];
+ 
+  return (
+    <div className="min-h-screen bg-slate-950 text-white">
+      <nav className="sticky top-0 z-50 bg-slate-900 border-b border-slate-800 px-8 py-4 flex justify-between">
+        <div className="font-bold text-xl text-cyan-400">ShieldPoint Cyber</div>
+        <div className="flex gap-6 text-sm">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#products">Products</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+ 
+      <section className="px-10 py-24 bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h1 className="text-5xl font-bold mb-6">Cyber Security, Compliance & Assurance</h1>
+            <p className="text-slate-300 mb-6">
+              Helping organisations achieve Cyber Essentials, Cyber Essentials Plus,
+              ISO 27001 readiness, security architecture maturity and vulnerability management.
+            </p>
+            <div className="flex gap-4">
+              <button className="bg-cyan-500 text-black px-5 py-3 rounded-2xl font-semibold">Book Consultation</button>
+              <button className="border border-cyan-500 px-5 py-3 rounded-2xl">Request Assessment</button>
+            </div>
+          </div>
+          <div className="bg-slate-900 rounded-3xl p-8 shadow-2xl border border-slate-800">
+            <h3 className="text-2xl font-bold mb-4">Trusted Security Partner</h3>
+            <ul className="space-y-2 text-slate-300">
+              <li>✓ Security Architecture</li>
+              <li>✓ ISO 27001 Consultancy</li>
+              <li>✓ Vulnerability Assessments</li>
+              <li>✓ Compliance & Governance</li>
+              <li>✓ Managed Security Solutions</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+ 
+      <section className="py-8 overflow-hidden border-y border-slate-800 bg-slate-900">
+        <div className="flex gap-10 whitespace-nowrap text-cyan-300 text-lg font-semibold overflow-x-auto px-8">
+          {partners.map((p) => (<span key={p}>{p}</span>))}
+        </div>
+      </section>
+ 
+      <section id="about" className="max-w-6xl mx-auto px-10 py-20">
+        <h2 className="text-3xl font-bold mb-6">About Us</h2>
+        <p className="text-slate-300 leading-7">
+          ShieldPoint Cyber is a consultancy-focused cyber security provider helping SMEs,
+          professional services firms, SaaS providers and public-sector organisations improve
+          their resilience, achieve compliance requirements and adopt security best practices.
+        </p>
+      </section>
+ 
+      <section id="services" className="max-w-6xl mx-auto px-10 py-20">
+        <h2 className="text-3xl font-bold mb-8">Services</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {services.map((s) => (
+            <div key={s} className="bg-slate-900 rounded-2xl p-5 border border-slate-800">
+              <h3 className="font-semibold">{s}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+ 
+      <section id="products" className="max-w-6xl mx-auto px-10 py-20">
+        <h2 className="text-3xl font-bold mb-8">Security Products</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {products.map((p) => (
+            <div key={p} className="bg-slate-900 rounded-2xl p-5 border border-slate-800">
+              <h3 className="font-semibold">{p}</h3>
+              <p className="text-sm text-slate-400 mt-2">Authorised reseller and implementation support.</p>
+            </div>
+          ))}
+        </div>
+      </section>
+ 
+      <section id="reviews" className="max-w-6xl mx-auto px-10 py-20">
+        <h2 className="text-3xl font-bold mb-8">Client Reviews</h2>
+        <div className="grid md:grid-cols-3 gap-5">
+          <div className="bg-slate-900 p-6 rounded-2xl">★★★★★<p className="mt-3">Professional support for our ISO 27001 preparation and governance programme.</p></div>
+          <div className="bg-slate-900 p-6 rounded-2xl">★★★★★<p className="mt-3">Excellent guidance through Cyber Essentials Plus readiness.</p></div>
+          <div className="bg-slate-900 p-6 rounded-2xl">★★★★★<p className="mt-3">Detailed vulnerability assessment with clear remediation advice.</p></div>
+        </div>
+      </section>
+ 
+      <section id="contact" className="max-w-4xl mx-auto px-10 py-20">
+        <h2 className="text-3xl font-bold mb-8">Contact Us</h2>
+        <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800">
+          <div className="grid gap-4">
+            <input className="bg-slate-800 p-3 rounded-xl" placeholder="Name" />
+            <input className="bg-slate-800 p-3 rounded-xl" placeholder="Email" />
+            <input className="bg-slate-800 p-3 rounded-xl" placeholder="Company" />
+            <textarea className="bg-slate-800 p-3 rounded-xl" rows={5} placeholder="How can we help?" />
+            <button className="bg-cyan-500 text-black px-5 py-3 rounded-2xl font-semibold">Submit Enquiry</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
